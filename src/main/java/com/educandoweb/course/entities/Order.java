@@ -122,7 +122,16 @@ public class Order implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 	
-	
+	public Double getTotal() {
+		
+		double sum = 0.0;
+		
+		for (OrderItem i: items) {
+			sum += i.getSubTotal();
+		}
+		
+		return sum;
+	}
 	
 
 }
